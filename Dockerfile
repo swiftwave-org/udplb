@@ -3,7 +3,7 @@ FROM --platform=$BUILDPLATFORM golang:1.21.6-bookworm AS build-env
 ENV CGO_ENABLED=0
 WORKDIR /src
 COPY . .
-RUN --mount=type=cache,target=/root/.cache/go-build go build -o goapp .
+RUN go build -o goapp .
 
 # final stage
 FROM --platform=$BUILDPLATFORM debian:bookworm
