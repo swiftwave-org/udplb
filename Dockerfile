@@ -13,4 +13,4 @@ WORKDIR /app
 COPY --from=build-env /src/goapp /app/goapp
 RUN chmod +x /app/goapp
 RUN apt-get update -y && apt-get install -y ca-certificates
-ENTRYPOINT /app/goapp
+ENTRYPOINT bash
